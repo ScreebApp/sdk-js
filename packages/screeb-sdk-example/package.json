@@ -1,6 +1,6 @@
 {
   "name": "@screeb/sdk-example",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -27,7 +27,7 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "@screeb/sdk-browser": "^0.1.0",
+    "@screeb/sdk-browser": "^0.1.1",
     "sirv-cli": "^2.0.2"
   }
 }

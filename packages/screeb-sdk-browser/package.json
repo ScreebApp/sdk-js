@@ -1,6 +1,6 @@
 {
   "name": "@screeb/sdk-browser",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Screeb's frontend team",
   "description": "Screeb's browser sdk.",
   "license": "ISC",
@@ -27,8 +27,8 @@
     }
   },
   "dependencies": {
-    "@screeb/eslint-config": "^0.1.0",
-    "@screeb/typescript-config": "^0.1.0",
+    "@screeb/eslint-config": "^0.1.1",
+    "@screeb/typescript-config": "^0.1.1",
     "@types/jest": "^29.5.1",
     "@types/node": "^18.16.3",
     "@typescript-eslint/eslint-plugin": "^5.59.2",
