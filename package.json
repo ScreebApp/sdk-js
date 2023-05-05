@@ -6,18 +6,17 @@
     "lint:fix": "lerna run --parallel lint -- --fix",
     "lint:commit": "commitlint --verbose --edit",
     "build": "lerna run build",
+    "build:doc": "lerna run --parallel build:doc",
     "build:watch": "lerna run --parallel build -- --watch",
     "prepare": "lerna bootstrap && npm run build && husky install",
-    "pretest": "npm run lint",
     "test": "lerna run --parallel test",
     "docs": "node ./scripts/generate-readmes",
-    "clean": "lerna clean --yes && lerna run clean && rm -Rf node_modules",
+    "clean": "lerna run --parallel clean",
     "upgrade:all": "npm-upgrade && lerna exec --concurrency 1 npm-upgrade",
-    "preversion": "npm run clean && npm lint && npm build && npm test && npm run build:doc",
+    "preversion": "npm run clean && npm run lint && npm run build && npm run test && npm run build:doc",
     "version": "lerna version",
     "postversion": "git push && git push --tags",
-    "prepublishOnly": "npm run version",
-    "publish": "lerna publish --no-private"
+    "publish": "npm run version && lerna publish --no-private"
   },
   "dependencies": {
     "@commitlint/cli": "^17.6.3",

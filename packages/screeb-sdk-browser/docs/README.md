@@ -46,7 +46,7 @@ This is a property object that are supported by Screeb.
 
 #### Defined in
 
-index.ts:5
+[index.ts:5](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L5)
 
 ___
 
@@ -58,7 +58,7 @@ This is property types that are supported by Screeb.
 
 #### Defined in
 
-index.ts:2
+[index.ts:2](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L2)
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 #### Defined in
 
-index.ts:20
+[index.ts:20](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L20)
 
 ___
 
@@ -87,7 +87,7 @@ This is the Screeb tag options object.
 
 #### Defined in
 
-index.ts:10
+[index.ts:10](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L10)
 
 ## Functions
 
@@ -111,7 +111,7 @@ Screeb.close();
 
 #### Defined in
 
-index.ts:138
+[index.ts:138](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L138)
 
 ___
 
@@ -152,7 +152,7 @@ Screeb.debug();
 
 #### Defined in
 
-index.ts:167
+[index.ts:167](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L167)
 
 ___
 
@@ -197,7 +197,7 @@ Screeb.init(
 
 #### Defined in
 
-index.ts:201
+[index.ts:201](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L201)
 
 ___
 
@@ -238,7 +238,7 @@ Screeb.identity(
 
 #### Defined in
 
-index.ts:234
+[index.ts:234](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L234)
 
 ___
 
@@ -271,7 +271,7 @@ console.log(await Screeb.identityGet());
 
 #### Defined in
 
-index.ts:268
+[index.ts:268](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L268)
 
 ___
 
@@ -314,7 +314,7 @@ Screeb.identityGroupAssign(
 
 #### Defined in
 
-index.ts:301
+[index.ts:301](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L301)
 
 ___
 
@@ -345,7 +345,7 @@ Screeb.identityGroupUnassign('company', 'Apple');
 
 #### Defined in
 
-index.ts:320
+[index.ts:320](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L320)
 
 ___
 
@@ -393,7 +393,7 @@ Screeb.identityProperties(
 
 #### Defined in
 
-index.ts:358
+[index.ts:358](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L358)
 
 ___
 
@@ -418,7 +418,7 @@ Screeb.identityReset();
 
 #### Defined in
 
-index.ts:372
+[index.ts:372](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L372)
 
 ___
 
@@ -460,7 +460,7 @@ Screeb.init(
 
 #### Defined in
 
-index.ts:95
+[index.ts:95](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L95)
 
 ___
 
@@ -486,7 +486,7 @@ console.log(Screeb.isLoaded()); // true
 
 #### Defined in
 
-index.ts:126
+[index.ts:126](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L126)
 
 ___
 
@@ -516,7 +516,7 @@ Screeb.load();
 
 #### Defined in
 
-index.ts:43
+[index.ts:43](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L43)
 
 ___
 
@@ -540,7 +540,7 @@ Screeb.surveyClose();
 
 #### Defined in
 
-index.ts:384
+[index.ts:384](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L384)
 
 ___
 
@@ -579,7 +579,7 @@ Screeb.surveyStart(
 
 #### Defined in
 
-index.ts:403
+[index.ts:403](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L403)
 
 ___
 
@@ -603,7 +603,7 @@ Screeb.targetingCheck();
 
 #### Defined in
 
-index.ts:423
+[index.ts:423](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L423)
 
 ___
 
@@ -641,7 +641,7 @@ Screeb.targetingDebug();
 
 #### Defined in
 
-index.ts:449
+[index.ts:449](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L449)
 
 ___
 
@@ -665,7 +665,7 @@ Screeb.targetingStart();
 
 #### Defined in
 
-index.ts:461
+[index.ts:461](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L461)
 
 ___
 
@@ -689,4 +689,4 @@ Screeb.targetingStop();
 
 #### Defined in
 
-index.ts:473
+[index.ts:473](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L473)
