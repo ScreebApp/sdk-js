@@ -3,15 +3,11 @@ module.exports = {
         "rules": {
         "scope-enum": [2, "always", [
             "*",
-            "admin-app",
-            "bento-colors-lib",
-            "bento-shadows-lib",
-            "bento-typography-lib",
-            "components-lib",
-            "eslint-config",
-            "eslint-config-react",
-            "template-lib",
-            "typescript-config",
+            "screeb-eslint-config",
+            "screeb-sdk-example",
+            "screeb-typescript-config",
+            "screeb-sdk-browser",
+            "screeb-template-lib"
         ]],
         "scope-empty": [2, "never"],
         "scope-min-length": [2, "always", 1],
