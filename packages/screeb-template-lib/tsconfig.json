@@ -1,0 +1,10 @@
+{
+  "extends": "./node_modules/@screeb/typescript-config/src/tsconfig.json",
+  "include": ["src"],
+  "exclude": ["dist"],
+  "compilerOptions": {
+    "outDir": "dist/es",
+    "declaration": true,
+    "declarationDir": "."
+  }
+}

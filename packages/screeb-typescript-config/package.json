@@ -1,0 +1,13 @@
+{
+  "name": "@screeb/typescript-config",
+  "version": "0.1.0",
+  "author": "Screeb's frontend team",
+  "description": "Screeb's typescript configs for frontend app.",
+  "private": true,
+  "license": "ISC",
+  "type": "module",
+  "sideEffects": false,
+  "dependencies": {
+    "@rollup/plugin-typescript": "^11.1.0"
+  }
+}

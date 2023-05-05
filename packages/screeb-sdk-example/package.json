@@ -1,0 +1,33 @@
+{
+  "name": "@screeb/sdk-example",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "echo '@TODO'",
+    "build": "rollup -c",
+    "start": "sirv public --no-clear",
+    "check": "svelte-check",
+    "clean": "rm -Rf public/build"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-terser": "^0.4.1",
+    "@rollup/plugin-typescript": "^11.1.0",
+    "@tsconfig/svelte": "^4.0.1",
+    "rollup": "^3.21.4",
+    "rollup-plugin-css-only": "^4.3.0",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-svelte": "^7.1.4",
+    "svelte": "^3.58.0",
+    "svelte-check": "^3.3.0",
+    "svelte-preprocess": "^5.0.3",
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@screeb/sdk-browser": "^0.1.0",
+    "sirv-cli": "^2.0.2"
+  }
+}
