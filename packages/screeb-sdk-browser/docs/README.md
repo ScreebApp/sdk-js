@@ -44,10 +44,6 @@ This is a property object that are supported by Screeb.
 
 ▪ [key: `string`]: [`PropertyType`](README.md#propertytype) \| [`PropertyType`](README.md#propertytype)[]
 
-#### Defined in
-
-[index.ts:5](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L5)
-
 ___
 
 ### PropertyType
@@ -56,19 +52,11 @@ ___
 
 This is property types that are supported by Screeb.
 
-#### Defined in
-
-[index.ts:2](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L2)
-
 ___
 
 ### ScreebObject
 
 Ƭ **ScreebObject**: `ScreebFunction` & { `q?`: `unknown`[][]  }
-
-#### Defined in
-
-[index.ts:20](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L20)
 
 ___
 
@@ -84,10 +72,6 @@ This is the Screeb tag options object.
 | :------ | :------ | :------ |
 | `screebEndpoint?` | `string` | Please don't do this. |
 | `window?` | `Window` | If you're running Screeb tag in an iframe, please set the inner window here. |
-
-#### Defined in
-
-[index.ts:10](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L10)
 
 ## Functions
 
@@ -108,10 +92,6 @@ Screeb.close();
 #### Returns
 
 `void` \| `Promise`<`unknown`\>
-
-#### Defined in
-
-[index.ts:138](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L138)
 
 ___
 
@@ -149,10 +129,6 @@ Screeb.debug();
 #### Returns
 
 `void` \| `Promise`<`unknown`\>
-
-#### Defined in
-
-[index.ts:167](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L167)
 
 ___
 
@@ -195,10 +171,6 @@ Screeb.init(
 
 `void` \| `Promise`<`unknown`\>
 
-#### Defined in
-
-[index.ts:201](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L201)
-
 ___
 
 ### identity
@@ -236,10 +208,6 @@ Screeb.identity(
 
 `void` \| `Promise`<`unknown`\>
 
-#### Defined in
-
-[index.ts:234](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L234)
-
 ___
 
 ### identityGet
@@ -268,10 +236,6 @@ console.log(await Screeb.identityGet());
 #### Returns
 
 `Promise`<`ScreebIdentityGetReturn`\>
-
-#### Defined in
-
-[index.ts:268](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L268)
 
 ___
 
@@ -312,10 +276,6 @@ Screeb.identityGroupAssign(
 
 `void` \| `Promise`<`unknown`\>
 
-#### Defined in
-
-[index.ts:301](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L301)
-
 ___
 
 ### identityGroupUnassign
@@ -342,10 +302,6 @@ Screeb.identityGroupUnassign('company', 'Apple');
 #### Returns
 
 `void` \| `Promise`<`unknown`\>
-
-#### Defined in
-
-[index.ts:320](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L320)
 
 ___
 
@@ -391,10 +347,6 @@ Screeb.identityProperties(
 
 `void` \| `Promise`<`unknown`\>
 
-#### Defined in
-
-[index.ts:358](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L358)
-
 ___
 
 ### identityReset
@@ -415,10 +367,6 @@ Screeb.identityReset();
 #### Returns
 
 `void` \| `Promise`<`unknown`\>
-
-#### Defined in
-
-[index.ts:372](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L372)
 
 ___
 
@@ -458,10 +406,6 @@ Screeb.init(
 
 `void` \| `Promise`<`unknown`\>
 
-#### Defined in
-
-[index.ts:95](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L95)
-
 ___
 
 ### isLoaded
@@ -483,10 +427,6 @@ console.log(Screeb.isLoaded()); // true
 #### Returns
 
 `boolean`
-
-#### Defined in
-
-[index.ts:126](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L126)
 
 ___
 
@@ -514,10 +454,6 @@ Screeb.load();
 
 `Promise`<`undefined`\>
 
-#### Defined in
-
-[index.ts:43](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L43)
-
 ___
 
 ### surveyClose
@@ -537,10 +473,6 @@ Screeb.surveyClose();
 #### Returns
 
 `void` \| `Promise`<`unknown`\>
-
-#### Defined in
-
-[index.ts:384](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L384)
 
 ___
 
@@ -577,10 +509,6 @@ Screeb.surveyStart(
 
 `void` \| `Promise`<`unknown`\>
 
-#### Defined in
-
-[index.ts:403](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L403)
-
 ___
 
 ### targetingCheck
@@ -600,10 +528,6 @@ Screeb.targetingCheck();
 #### Returns
 
 `void` \| `Promise`<`unknown`\>
-
-#### Defined in
-
-[index.ts:423](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L423)
 
 ___
 
@@ -639,10 +563,6 @@ Screeb.targetingDebug();
 
 `void` \| `Promise`<`unknown`\>
 
-#### Defined in
-
-[index.ts:449](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L449)
-
 ___
 
 ### targetingStart
@@ -663,10 +583,6 @@ Screeb.targetingStart();
 
 `void` \| `Promise`<`unknown`\>
 
-#### Defined in
-
-[index.ts:461](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L461)
-
 ___
 
 ### targetingStop
@@ -686,7 +602,3 @@ Screeb.targetingStop();
 #### Returns
 
 `void` \| `Promise`<`unknown`\>
-
-#### Defined in
-
-[index.ts:473](https://github.com/ScreebApp/sdk-js/blob/89ced3d/packages/screeb-sdk-browser/src/index.ts#L473)

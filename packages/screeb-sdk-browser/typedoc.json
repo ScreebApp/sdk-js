@@ -4,5 +4,6 @@
   "theme": "markdown",
   "readme": "none",
   "tsconfig": "./tsconfig.json",
-  "plugin": ["typedoc-plugin-markdown"]
+  "plugin": ["typedoc-plugin-markdown"],
+  "disableSources": true
 }
