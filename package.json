@@ -1,6 +1,10 @@
 {
   "name": "root",
   "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": "^18.12"
+  },
   "scripts": {
     "lint": "lerna run --parallel lint",
     "lint:fix": "lerna run --parallel lint -- --fix",

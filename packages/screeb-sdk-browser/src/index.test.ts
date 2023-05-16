@@ -34,13 +34,13 @@ describe("Screeb", () => {
 
       expect(window.$screeb?.q).toEqual(undefined);
 
-      Screeb.init("website-uuid", "visitor-uuid", { test: 123 });
+      Screeb.init("website-uuid", "user-uuid", { test: 123 });
 
       expect(window.$screeb?.q).toEqual([
         [
           "init",
           "website-uuid",
-          { identity: { id: "visitor-uuid", properties: { test: 123 } } },
+          { identity: { id: "user-uuid", properties: { test: 123 } } },
         ],
       ]);
     });

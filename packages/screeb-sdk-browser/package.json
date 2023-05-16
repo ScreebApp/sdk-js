@@ -3,13 +3,16 @@
   "version": "0.1.2",
   "author": "Screeb's frontend team",
   "description": "Screeb's browser sdk.",
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "lint": "eslint .",
     "build": "rollup -c ./node_modules/@screeb/typescript-config/src/rollup.config.js",
     "build:doc": "typedoc src/index.ts",
     "clean": "rm -Rf dist",
     "test": "jest"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "sideEffects": false,
   "type": "module",

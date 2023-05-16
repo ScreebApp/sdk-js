@@ -4,7 +4,7 @@
   "author": "Screeb's frontend team",
   "description": "Screeb's typescript configs for frontend app.",
   "private": true,
-  "license": "ISC",
+  "license": "MIT",
   "type": "module",
   "sideEffects": false,
   "dependencies": {

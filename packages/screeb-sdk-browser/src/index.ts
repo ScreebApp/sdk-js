@@ -67,8 +67,8 @@ export const load = (options: ScreebOptions = {}) =>
  * Initializes Screeb tag.
  *
  * @param websiteId Your website/channel id.
- * @param visitorId The unique identifier of your visitor.
- * @param visitorProperties The properties of your visitor.
+ * @param userId The unique identifier of your user.
+ * @param userProperties The properties of your user.
  * ```text Requirements:
  *   - Property names must be limited to 128 characters
  *   - No more than 1000 attributes
@@ -81,7 +81,7 @@ export const load = (options: ScreebOptions = {}) =>
  *
  * Screeb.init(
  *   "<your-website-id>",
- *   "<your-visitor-id>",
+ *   "<your-user-id>",
  *   {
  *     firstname: '<user-firstname>',
  *     lastname: '<user-lastname>',
@@ -94,16 +94,16 @@ export const load = (options: ScreebOptions = {}) =>
  */
 export const init = (
   websiteId: string,
-  visitorId?: string,
-  visitorProperties?: PropertyRecord
+  userId?: string,
+  userProperties?: PropertyRecord
 ) => {
   let identityObject;
 
-  if (visitorId || visitorProperties) {
+  if (userId || userProperties) {
     identityObject = {
       identity: {
-        id: visitorId,
-        properties: visitorProperties,
+        id: userId,
+        properties: userProperties,
       },
     };
   }
@@ -167,7 +167,7 @@ export const close = () => $screeb("close");
 export const debug = () => $screeb("debug");
 
 /**
- * Tracks a visitor event.
+ * Tracks a user event.
  *
  * @param eventName The event name.
  * @param eventProperties The properties of your event.
@@ -181,8 +181,7 @@ export const debug = () => $screeb("debug");
  * ```ts
  * import * as Screeb from "@screeb/sdk-browser";
  *
- * Screeb.init(
- *   "event.track",
+ * Screeb.eventTrack(
  *   "Product added to cart",
  *   {
  *     product_name: 'Red bike 2021',
@@ -204,11 +203,11 @@ export const eventTrack = (
 ) => $screeb("event.track", eventName, eventProperties);
 
 /**
- * Change the current visitor identity.
+ * Change the current user identity.
  * Warning: Running surveys will be closed.
  *
- * @param visitorId The unique identifier of your visitor.
- * @param visitorProperties The properties of your visitor.
+ * @param userId The unique identifier of your user.
+ * @param userProperties The properties of your user.
  * ```text Requirements:
  *   - Property names must be limited to 128 characters
  *   - No more than 1000 attributes
@@ -220,7 +219,7 @@ export const eventTrack = (
  * import * as Screeb from "@screeb/sdk-browser";
  *
  * Screeb.identity(
- *   "<your-visitor-id>",
+ *   "<your-user-id>",
  *   {
  *     firstname: '<user-firstname>',
  *     lastname: '<user-lastname>',
@@ -231,10 +230,8 @@ export const eventTrack = (
  * );
  * ```
  */
-export const identity = (
-  visitorId: string,
-  visitorProperties?: PropertyRecord
-) => $screeb("identity", visitorId, visitorProperties);
+export const identity = (userId: string, userProperties?: PropertyRecord) =>
+  $screeb("identity", userId, userProperties);
 
 type ScreebIdentityGetReturn = {
   anonymous_id: string;
@@ -247,7 +244,7 @@ type ScreebIdentityGetReturn = {
 };
 
 /**
- * Retrieves the current visitor identity.
+ * Retrieves the current user identity.
  *
  * @example
  * ```ts
@@ -269,11 +266,11 @@ export const identityGet = (): Promise<ScreebIdentityGetReturn> =>
   $screeb("identity.get") as Promise<ScreebIdentityGetReturn>;
 
 /**
- * Assigns the current visitor to a group.
+ * Assigns the current user to a group.
  *
  * @param groupName
  * @param groupType
- * @param groupProperties The properties of your visitor group.
+ * @param groupProperties The properties of your user group.
  * ```text Requirements:
  *   - Property names must be limited to 128 characters
  *   - No more than 1000 attributes
@@ -305,10 +302,10 @@ export const identityGroupAssign = (
 ) => $screeb("identity.group.assign", groupType, groupName, groupProperties);
 
 /**
- * Unassigns the current visitor to a group.
+ * Unassigns the current user to a group.
  *
- * @param groupName The name of your visitor group.
- * @param groupType The type of your visitor group.
+ * @param groupName The name of your user group.
+ * @param groupType The type of your user group.
  *
  * @example
  * ```ts
@@ -321,9 +318,9 @@ export const identityGroupUnassign = (groupName: string, groupType?: string) =>
   $screeb("identity.group.unassign", groupType, groupName);
 
 /**
- * Adds properties to the current visitor identity.
+ * Adds properties to the current user identity.
  *
- * @param visitorProperties The properties of your visitor.
+ * @param userProperties The properties of your user.
  * ```text Requirements:
  *   - Property names must be limited to 128 characters
  *   - No more than 1000 attributes
@@ -334,7 +331,7 @@ export const identityGroupUnassign = (groupName: string, groupType?: string) =>
  * ```ts
  * import * as Screeb from "@screeb/sdk-browser";
  *
- * // Set visitor properties
+ * // Set user properties
  * Screeb.identityProperties(
  *   {
  *     firstname: '<user-firstname>',
@@ -345,7 +342,7 @@ export const identityGroupUnassign = (groupName: string, groupType?: string) =>
  *   }
  * );
  *
- * // Delete visitor property : set values to null
+ * // Delete user property : set values to null
  * Screeb.identityProperties(
  *   {
  *     age: null,
@@ -355,11 +352,11 @@ export const identityGroupUnassign = (groupName: string, groupType?: string) =>
  * );
  * ```
  */
-export const identityProperties = (visitorProperties: PropertyRecord) =>
-  $screeb("identity.properties", visitorProperties);
+export const identityProperties = (userProperties: PropertyRecord) =>
+  $screeb("identity.properties", userProperties);
 
 /**
- * Resets the current visitor identity.
+ * Resets the current user identity.
  * Warning: This command must be called only once, since it creates a new identity on Screeb side.
  *
  * @example
@@ -402,7 +399,7 @@ export const surveyClose = () => $screeb("survey.close");
  */
 export const surveyStart = (
   surveyId: string,
-  allowMultipleResponses = false,
+  allowMultipleResponses = true,
   hiddenFields: PropertyRecord = {}
 ) =>
   $screeb("survey.start", surveyId, {
@@ -429,7 +426,7 @@ export const targetingCheck = () => $screeb("targeting.check");
  * ```ts
  * import * as Screeb from "@screeb/sdk-browser";
  *
- * Screeb.targetingDebug();
+ * console.log(await Screeb.targetingDebug());
  * // targeting ************ SCREEB TARGETING RULES DEBUG **************
  * // Disabled surveys are not listed here.
  * //
@@ -447,27 +444,3 @@ export const targetingCheck = () => $screeb("targeting.check");
  * ```
  */
 export const targetingDebug = () => $screeb("targeting.debug");
-
-/**
- * Starts the targeting engine.
- *
- * @example
- * ```ts
- * import * as Screeb from "@screeb/sdk-browser";
- *
- * Screeb.targetingStart();
- * ```
- */
-export const targetingStart = () => $screeb("targeting.start");
-
-/**
- * Stops the targeting engine.
- *
- * @example
- * ```ts
- * import * as Screeb from "@screeb/sdk-browser";
- *
- * Screeb.targetingStop();
- * ```
- */
-export const targetingStop = () => $screeb("targeting.stop");

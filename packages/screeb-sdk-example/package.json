@@ -3,6 +3,9 @@
   "version": "0.1.2",
   "private": true,
   "type": "module",
+  "author": "Screeb's frontend team",
+  "description": "Screeb's example app for browser sdk.",
+  "license": "MIT",
   "scripts": {
     "lint": "echo '@TODO'",
     "build": "rollup -c",

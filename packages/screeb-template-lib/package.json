@@ -4,7 +4,7 @@
   "author": "Screeb's frontend team",
   "description": "Screeb's template for a front-end lib.",
   "private": true,
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "lint": "eslint .",
     "build": "rollup -c ./node_modules/@screeb/typescript-config/src/rollup.config.js",
