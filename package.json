@@ -14,10 +14,9 @@
     "build:watch": "lerna run --parallel build -- --watch",
     "prepare": "lerna bootstrap && npm run build && husky install",
     "test": "lerna run --parallel test",
-    "docs": "node ./scripts/generate-readmes",
     "clean": "lerna run --parallel clean",
     "upgrade:all": "npm-upgrade && lerna exec --concurrency 1 npm-upgrade",
-    "preversion": "npm run clean && npm run lint && npm run build && npm run test && npm run build:doc",
+    "preversion": "npm run clean && npm run lint && npm run build && npm run test",
     "version": "lerna version",
     "postversion": "git push && git push --tags",
     "publish": "npm run version && lerna publish --no-private"

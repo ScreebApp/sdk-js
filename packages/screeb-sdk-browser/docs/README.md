@@ -29,8 +29,6 @@
 - [surveyStart](README.md#surveystart)
 - [targetingCheck](README.md#targetingcheck)
 - [targetingDebug](README.md#targetingdebug)
-- [targetingStart](README.md#targetingstart)
-- [targetingStop](README.md#targetingstop)
 
 ## Type Aliases
 
@@ -136,15 +134,14 @@ ___
 
 ▸ **eventTrack**(`eventName`, `eventProperties?`): `void` \| `Promise`<`unknown`\>
 
-Tracks a visitor event.
+Tracks a user event.
 
 **`Example`**
 
 ```ts
 import * as Screeb from "@screeb/sdk-browser";
 
-Screeb.init(
-  "event.track",
+Screeb.eventTrack(
   "Product added to cart",
   {
     product_name: 'Red bike 2021',
@@ -175,9 +172,9 @@ ___
 
 ### identity
 
-▸ **identity**(`visitorId`, `visitorProperties?`): `void` \| `Promise`<`unknown`\>
+▸ **identity**(`userId`, `userProperties?`): `void` \| `Promise`<`unknown`\>
 
-Change the current visitor identity.
+Change the current user identity.
 Warning: Running surveys will be closed.
 
 **`Example`**
@@ -186,7 +183,7 @@ Warning: Running surveys will be closed.
 import * as Screeb from "@screeb/sdk-browser";
 
 Screeb.identity(
-  "<your-visitor-id>",
+  "<your-user-id>",
   {
     firstname: '<user-firstname>',
     lastname: '<user-lastname>',
@@ -201,8 +198,8 @@ Screeb.identity(
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `visitorId` | `string` | The unique identifier of your visitor. |
-| `visitorProperties?` | [`PropertyRecord`](README.md#propertyrecord) | The properties of your visitor. ```text Requirements: - Property names must be limited to 128 characters - No more than 1000 attributes - Supported types for values: string, number, boolean and Date. ``` |
+| `userId` | `string` | The unique identifier of your user. |
+| `userProperties?` | [`PropertyRecord`](README.md#propertyrecord) | The properties of your user. ```text Requirements: - Property names must be limited to 128 characters - No more than 1000 attributes - Supported types for values: string, number, boolean and Date. ``` |
 
 #### Returns
 
@@ -214,7 +211,7 @@ ___
 
 ▸ **identityGet**(): `Promise`<`ScreebIdentityGetReturn`\>
 
-Retrieves the current visitor identity.
+Retrieves the current user identity.
 
 **`Example`**
 
@@ -243,7 +240,7 @@ ___
 
 ▸ **identityGroupAssign**(`groupName`, `groupType?`, `groupProperties?`): `void` \| `Promise`<`unknown`\>
 
-Assigns the current visitor to a group.
+Assigns the current user to a group.
 
 **`Example`**
 
@@ -270,7 +267,7 @@ Screeb.identityGroupAssign(
 | :------ | :------ | :------ |
 | `groupName` | `string` |  |
 | `groupType?` | `string` |  |
-| `groupProperties?` | [`PropertyRecord`](README.md#propertyrecord) | The properties of your visitor group. ```text Requirements: - Property names must be limited to 128 characters - No more than 1000 attributes - Supported types for values: string, number, boolean and Date. ``` |
+| `groupProperties?` | [`PropertyRecord`](README.md#propertyrecord) | The properties of your user group. ```text Requirements: - Property names must be limited to 128 characters - No more than 1000 attributes - Supported types for values: string, number, boolean and Date. ``` |
 
 #### Returns
 
@@ -282,7 +279,7 @@ ___
 
 ▸ **identityGroupUnassign**(`groupName`, `groupType?`): `void` \| `Promise`<`unknown`\>
 
-Unassigns the current visitor to a group.
+Unassigns the current user to a group.
 
 **`Example`**
 
@@ -296,8 +293,8 @@ Screeb.identityGroupUnassign('company', 'Apple');
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `groupName` | `string` | The name of your visitor group. |
-| `groupType?` | `string` | The type of your visitor group. |
+| `groupName` | `string` | The name of your user group. |
+| `groupType?` | `string` | The type of your user group. |
 
 #### Returns
 
@@ -307,16 +304,16 @@ ___
 
 ### identityProperties
 
-▸ **identityProperties**(`visitorProperties`): `void` \| `Promise`<`unknown`\>
+▸ **identityProperties**(`userProperties`): `void` \| `Promise`<`unknown`\>
 
-Adds properties to the current visitor identity.
+Adds properties to the current user identity.
 
 **`Example`**
 
 ```ts
 import * as Screeb from "@screeb/sdk-browser";
 
-// Set visitor properties
+// Set user properties
 Screeb.identityProperties(
   {
     firstname: '<user-firstname>',
@@ -327,7 +324,7 @@ Screeb.identityProperties(
   }
 );
 
-// Delete visitor property : set values to null
+// Delete user property : set values to null
 Screeb.identityProperties(
   {
     age: null,
@@ -341,7 +338,7 @@ Screeb.identityProperties(
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `visitorProperties` | [`PropertyRecord`](README.md#propertyrecord) | The properties of your visitor. ```text Requirements: - Property names must be limited to 128 characters - No more than 1000 attributes - Supported types for values: string, number, boolean and Date. ``` |
+| `userProperties` | [`PropertyRecord`](README.md#propertyrecord) | The properties of your user. ```text Requirements: - Property names must be limited to 128 characters - No more than 1000 attributes - Supported types for values: string, number, boolean and Date. ``` |
 
 #### Returns
 
@@ -353,7 +350,7 @@ ___
 
 ▸ **identityReset**(): `void` \| `Promise`<`unknown`\>
 
-Resets the current visitor identity.
+Resets the current user identity.
 Warning: This command must be called only once, since it creates a new identity on Screeb side.
 
 **`Example`**
@@ -372,7 +369,7 @@ ___
 
 ### init
 
-▸ **init**(`websiteId`, `visitorId?`, `visitorProperties?`): `void` \| `Promise`<`unknown`\>
+▸ **init**(`websiteId`, `userId?`, `userProperties?`): `void` \| `Promise`<`unknown`\>
 
 Initializes Screeb tag.
 
@@ -383,7 +380,7 @@ import * as Screeb from "@screeb/sdk-browser";
 
 Screeb.init(
   "<your-website-id>",
-  "<your-visitor-id>",
+  "<your-user-id>",
   {
     firstname: '<user-firstname>',
     lastname: '<user-lastname>',
@@ -399,8 +396,8 @@ Screeb.init(
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `websiteId` | `string` | Your website/channel id. |
-| `visitorId?` | `string` | The unique identifier of your visitor. |
-| `visitorProperties?` | [`PropertyRecord`](README.md#propertyrecord) | The properties of your visitor. ```text Requirements: - Property names must be limited to 128 characters - No more than 1000 attributes - Supported types for values: string, number, boolean and Date ``` |
+| `userId?` | `string` | The unique identifier of your user. |
+| `userProperties?` | [`PropertyRecord`](README.md#propertyrecord) | The properties of your user. ```text Requirements: - Property names must be limited to 128 characters - No more than 1000 attributes - Supported types for values: string, number, boolean and Date ``` |
 
 #### Returns
 
@@ -502,7 +499,7 @@ Screeb.surveyStart(
 | Name | Type | Default value |
 | :------ | :------ | :------ |
 | `surveyId` | `string` | `undefined` |
-| `allowMultipleResponses` | `boolean` | `false` |
+| `allowMultipleResponses` | `boolean` | `true` |
 | `hiddenFields` | [`PropertyRecord`](README.md#propertyrecord) | `{}` |
 
 #### Returns
@@ -542,7 +539,7 @@ Prints the current state of the targeting engine.
 ```ts
 import * as Screeb from "@screeb/sdk-browser";
 
-Screeb.targetingDebug();
+console.log(await Screeb.targetingDebug());
 // targeting ************ SCREEB TARGETING RULES DEBUG **************
 // Disabled surveys are not listed here.
 //
@@ -557,46 +554,6 @@ Screeb.targetingDebug();
 //   - Rule of type "Capping per time between survey display on current respondent": true 🟢
 //   - Rule of type "User event count": false 🔴
 //   - Rule of type "Capping per respondent display count": false 🔴
-```
-
-#### Returns
-
-`void` \| `Promise`<`unknown`\>
-
-___
-
-### targetingStart
-
-▸ **targetingStart**(): `void` \| `Promise`<`unknown`\>
-
-Starts the targeting engine.
-
-**`Example`**
-
-```ts
-import * as Screeb from "@screeb/sdk-browser";
-
-Screeb.targetingStart();
-```
-
-#### Returns
-
-`void` \| `Promise`<`unknown`\>
-
-___
-
-### targetingStop
-
-▸ **targetingStop**(): `void` \| `Promise`<`unknown`\>
-
-Stops the targeting engine.
-
-**`Example`**
-
-```ts
-import * as Screeb from "@screeb/sdk-browser";
-
-Screeb.targetingStop();
 ```
 
 #### Returns
