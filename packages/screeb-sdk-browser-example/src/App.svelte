@@ -7,13 +7,23 @@
 	  await Screeb.load()
 	  // eslint-disable-next-line no-console
 	  console.log("screeb loaded")
-	  await Screeb.init("0e2b609a-8dce-4695-a80f-966fbfa87a88", "dev@screeb.app", {
-	    authenticated: true,
-	    firstname: "John",
-	    last_seen_at: new Date(),
-	    lastname: "Smith",
-	    org_size: 20,
-	  })
+	  await Screeb.init(
+	    "0e2b609a-8dce-4695-a80f-966fbfa87a88",
+	    "dev@screeb.app",
+	    {
+	      authenticated: true,
+	      firstname: "John",
+	      last_seen_at: new Date(),
+	      lastname: "Smith",
+	      org_size: 20,
+	    },
+	    {
+	      onSDKReady: (e) => {
+	        // eslint-disable-next-line no-console
+	        console.log("screeb ready", e)
+	      },
+	    }
+	  )
 	
   // eslint-disable-next-line no-console
 	  console.log(await Screeb.debug())

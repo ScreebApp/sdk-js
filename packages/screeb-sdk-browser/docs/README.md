@@ -6,11 +6,47 @@
 
 ### Type Aliases
 
+- [GlobalHooks](README.md#globalhooks)
+- [HookType](README.md#hooktype)
 - [PropertyRecord](README.md#propertyrecord)
 - [PropertyType](README.md#propertytype)
+- [QuestionAnswerPair](README.md#questionanswerpair)
+- [ResponseAnswer](README.md#responseanswer)
+- [ResponseAnswerValue](README.md#responseanswervalue)
+- [ResponseAnswerValueBoolean](README.md#responseanswervalueboolean)
+- [ResponseAnswerValueNone](README.md#responseanswervaluenone)
+- [ResponseAnswerValueNumber](README.md#responseanswervaluenumber)
+- [ResponseAnswerValueString](README.md#responseanswervaluestring)
+- [ResponseAnswerValueTime](README.md#responseanswervaluetime)
+- [ResponseHook](README.md#responsehook)
+- [ResponseHookSDKReady](README.md#responsehooksdkready)
+- [ResponseHookSurveyCompleted](README.md#responsehooksurveycompleted)
+- [ResponseHookSurveyHidden](README.md#responsehooksurveyhidden)
+- [ResponseHookSurveyReplied](README.md#responsehooksurveyreplied)
+- [ResponseHookSurveyShowed](README.md#responsehooksurveyshowed)
+- [ResponseHookSurveyStarted](README.md#responsehooksurveystarted)
+- [ResponseQuestion](README.md#responsequestion)
+- [ResponseQuestionActionButton](README.md#responsequestionactionbutton)
+- [ResponseQuestionActionInput](README.md#responsequestionactioninput)
+- [ResponseQuestionActionInputValidation](README.md#responsequestionactioninputvalidation)
+- [ResponseQuestionActionLink](README.md#responsequestionactionlink)
+- [ResponseQuestionActionRange](README.md#responsequestionactionrange)
+- [ResponseQuestionActionScoring](README.md#responsequestionactionscoring)
+- [ResponseQuestionActionSkip](README.md#responsequestionactionskip)
+- [ResponseQuestionCTA](README.md#responsequestioncta)
+- [ResponseQuestionCTAAppStoreRating](README.md#responsequestionctaappstorerating)
+- [ResponseQuestionCTAChoices](README.md#responsequestionctachoices)
+- [ResponseQuestionCTAInput](README.md#responsequestionctainput)
+- [ResponseQuestionCTANone](README.md#responsequestionctanone)
+- [ResponseQuestionCTARange](README.md#responsequestionctarange)
+- [ResponseQuestionCTAScores](README.md#responsequestionctascores)
+- [ResponseQuestionMessage](README.md#responsequestionmessage)
+- [ResponseQuestionMessageText](README.md#responsequestionmessagetext)
+- [ResponseStatus](README.md#responsestatus)
 - [ScreebIdentityGetReturn](README.md#screebidentitygetreturn)
 - [ScreebObject](README.md#screebobject)
 - [ScreebOptions](README.md#screeboptions)
+- [SurveyHooks](README.md#surveyhooks)
 
 ### Functions
 
@@ -33,6 +69,20 @@
 
 ## Type Aliases
 
+### GlobalHooks
+
+Ƭ **GlobalHooks**: { [key in HookType \| "onSDKReady"]?: Function }
+
+___
+
+### HookType
+
+Ƭ **HookType**: ``"onSurveyShowed"`` \| ``"onSurveyStarted"`` \| ``"onQuestionReplied"`` \| ``"onSurveyCompleted"`` \| ``"onSurveyHidden"``
+
+Hooks
+
+___
+
 ### PropertyRecord
 
 Ƭ **PropertyRecord**: `Object`
@@ -50,6 +100,446 @@ ___
 Ƭ **PropertyType**: `number` \| `boolean` \| `string` \| `Date` \| [`PropertyRecord`](README.md#propertyrecord)
 
 This is property types that are supported by Screeb.
+
+___
+
+### QuestionAnswerPair
+
+Ƭ **QuestionAnswerPair**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `answer?` | [`ResponseAnswer`](README.md#responseanswer) |
+| `question` | [`ResponseQuestion`](README.md#responsequestion) |
+
+___
+
+### ResponseAnswer
+
+Ƭ **ResponseAnswer**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `created_at` | `Date` |
+| `id` | `string` |
+| `question_id` | `string` |
+| `values` | [`ResponseAnswerValue`](README.md#responseanswervalue)[] |
+
+___
+
+### ResponseAnswerValue
+
+Ƭ **ResponseAnswerValue**: [`ResponseAnswerValueNone`](README.md#responseanswervaluenone) \| [`ResponseAnswerValueString`](README.md#responseanswervaluestring) \| [`ResponseAnswerValueNumber`](README.md#responseanswervaluenumber) \| [`ResponseAnswerValueBoolean`](README.md#responseanswervalueboolean) \| [`ResponseAnswerValueTime`](README.md#responseanswervaluetime)
+
+Answer
+
+___
+
+### ResponseAnswerValueBoolean
+
+Ƭ **ResponseAnswerValueBoolean**: `ResponseAnswerValueAbstract` & { `type`: ``"boolean"`` ; `value_boolean`: `boolean`  }
+
+___
+
+### ResponseAnswerValueNone
+
+Ƭ **ResponseAnswerValueNone**: `ResponseAnswerValueAbstract` & { `type`: ``"none"``  }
+
+___
+
+### ResponseAnswerValueNumber
+
+Ƭ **ResponseAnswerValueNumber**: `ResponseAnswerValueAbstract` & { `type`: ``"number"`` ; `value_number`: `number`  }
+
+___
+
+### ResponseAnswerValueString
+
+Ƭ **ResponseAnswerValueString**: `ResponseAnswerValueAbstract` & { `type`: ``"string"`` ; `value_string`: `string`  }
+
+___
+
+### ResponseAnswerValueTime
+
+Ƭ **ResponseAnswerValueTime**: `ResponseAnswerValueAbstract` & { `type`: ``"time"`` ; `value_time`: `Date`  }
+
+___
+
+### ResponseHook
+
+Ƭ **ResponseHook**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `onQuestionReplied` | [`ResponseHookSurveyReplied`](README.md#responsehooksurveyreplied) |
+| `onSDKReady` | [`ResponseHookSDKReady`](README.md#responsehooksdkready) |
+| `onSurveyCompleted` | [`ResponseHookSurveyCompleted`](README.md#responsehooksurveycompleted) |
+| `onSurveyHidden` | [`ResponseHookSurveyHidden`](README.md#responsehooksurveyhidden) |
+| `onSurveyShowed` | [`ResponseHookSurveyShowed`](README.md#responsehooksurveyshowed) |
+| `onSurveyStarted` | [`ResponseHookSurveyStarted`](README.md#responsehooksurveystarted) |
+
+___
+
+### ResponseHookSDKReady
+
+Ƭ **ResponseHookSDKReady**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `user` | { `anonymous_id`: `string` ; `id`: `string`  } |
+| `user.anonymous_id` | `string` |
+| `user.id` | `string` |
+
+___
+
+### ResponseHookSurveyCompleted
+
+Ƭ **ResponseHookSurveyCompleted**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `items` | [`QuestionAnswerPair`](README.md#questionanswerpair)[] |
+| `response` | { `id`: `string`  } |
+| `response.id` | `string` |
+| `survey` | { `id`: `string` ; `survey_format`: ``"conversationnal"`` \| ``"cards"`` \| `undefined` ; `survey_position`: `number` ; `survey_size`: `number`  } |
+| `survey.id` | `string` |
+| `survey.survey_format` | ``"conversationnal"`` \| ``"cards"`` \| `undefined` |
+| `survey.survey_position` | `number` |
+| `survey.survey_size` | `number` |
+| `user` | { `anonymous_id`: `string` ; `id`: `string`  } |
+| `user.anonymous_id` | `string` |
+| `user.id` | `string` |
+
+___
+
+### ResponseHookSurveyHidden
+
+Ƭ **ResponseHookSurveyHidden**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `items` | [`QuestionAnswerPair`](README.md#questionanswerpair)[] |
+| `response` | { `hide_reason`: [`ResponseStatus`](README.md#responsestatus) ; `id`: `string`  } |
+| `response.hide_reason` | [`ResponseStatus`](README.md#responsestatus) |
+| `response.id` | `string` |
+| `survey` | { `id`: `string` ; `survey_format`: ``"conversationnal"`` \| ``"cards"`` \| `undefined` ; `survey_position`: `number` ; `survey_size`: `number`  } |
+| `survey.id` | `string` |
+| `survey.survey_format` | ``"conversationnal"`` \| ``"cards"`` \| `undefined` |
+| `survey.survey_position` | `number` |
+| `survey.survey_size` | `number` |
+| `user` | { `anonymous_id`: `string` ; `id`: `string`  } |
+| `user.anonymous_id` | `string` |
+| `user.id` | `string` |
+
+___
+
+### ResponseHookSurveyReplied
+
+Ƭ **ResponseHookSurveyReplied**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `items` | [`QuestionAnswerPair`](README.md#questionanswerpair)[] |
+| `response` | { `id`: `string` ; `status`: [`ResponseStatus`](README.md#responsestatus)  } |
+| `response.id` | `string` |
+| `response.status` | [`ResponseStatus`](README.md#responsestatus) |
+| `survey` | { `id`: `string` ; `survey_format`: ``"conversationnal"`` \| ``"cards"`` \| `undefined` ; `survey_position`: `number` ; `survey_size`: `number`  } |
+| `survey.id` | `string` |
+| `survey.survey_format` | ``"conversationnal"`` \| ``"cards"`` \| `undefined` |
+| `survey.survey_position` | `number` |
+| `survey.survey_size` | `number` |
+| `user` | { `anonymous_id`: `string` ; `id`: `string`  } |
+| `user.anonymous_id` | `string` |
+| `user.id` | `string` |
+
+___
+
+### ResponseHookSurveyShowed
+
+Ƭ **ResponseHookSurveyShowed**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `items` | [`QuestionAnswerPair`](README.md#questionanswerpair)[] |
+| `response` | { `id`: `string`  } |
+| `response.id` | `string` |
+| `survey` | { `id`: `string` ; `survey_format`: ``"conversationnal"`` \| ``"cards"`` \| `undefined` ; `survey_position`: `number` ; `survey_size`: `number`  } |
+| `survey.id` | `string` |
+| `survey.survey_format` | ``"conversationnal"`` \| ``"cards"`` \| `undefined` |
+| `survey.survey_position` | `number` |
+| `survey.survey_size` | `number` |
+| `user` | { `anonymous_id`: `string` ; `id`: `string`  } |
+| `user.anonymous_id` | `string` |
+| `user.id` | `string` |
+
+___
+
+### ResponseHookSurveyStarted
+
+Ƭ **ResponseHookSurveyStarted**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `response` | { `id`: `string`  } |
+| `response.id` | `string` |
+| `survey` | { `id`: `string` ; `survey_format`: ``"conversationnal"`` \| ``"cards"`` \| `undefined` ; `survey_position`: `number` ; `survey_size`: `number`  } |
+| `survey.id` | `string` |
+| `survey.survey_format` | ``"conversationnal"`` \| ``"cards"`` \| `undefined` |
+| `survey.survey_position` | `number` |
+| `survey.survey_size` | `number` |
+| `user` | { `anonymous_id`: `string` ; `id`: `string`  } |
+| `user.anonymous_id` | `string` |
+| `user.id` | `string` |
+
+___
+
+### ResponseQuestion
+
+Ƭ **ResponseQuestion**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `call_to_action` | [`ResponseQuestionCTA`](README.md#responsequestioncta) |
+| `ends` | `boolean` |
+| `id` | `string` |
+| `messages` | [`ResponseQuestionMessage`](README.md#responsequestionmessage)[] |
+| `skip_action?` | [`ResponseQuestionActionSkip`](README.md#responsequestionactionskip) |
+
+___
+
+### ResponseQuestionActionButton
+
+Ƭ **ResponseQuestionActionButton**: `Object`
+
+Action
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `id` | `string` |
+| `payload` | { `emoji`: `string` ; `label`: `string` ; `url?`: `string`  } |
+| `payload.emoji` | `string` |
+| `payload.label` | `string` |
+| `payload.url?` | `string` |
+| `type` | ``"button"`` |
+
+___
+
+### ResponseQuestionActionInput
+
+Ƭ **ResponseQuestionActionInput**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `id` | `string` |
+| `payload` | { `validation`: [`ResponseQuestionActionInputValidation`](README.md#responsequestionactioninputvalidation)  } |
+| `payload.validation` | [`ResponseQuestionActionInputValidation`](README.md#responsequestionactioninputvalidation) |
+| `type` | ``"text_input"`` |
+
+___
+
+### ResponseQuestionActionInputValidation
+
+Ƭ **ResponseQuestionActionInputValidation**: ``"text"`` \| ``"email"``
+
+___
+
+### ResponseQuestionActionLink
+
+Ƭ **ResponseQuestionActionLink**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `id` | `string` |
+| `payload` | { `emoji`: `string` ; `label`: `string` ; `link`: `string`  } |
+| `payload.emoji` | `string` |
+| `payload.label` | `string` |
+| `payload.link` | `string` |
+| `type` | ``"link"`` |
+
+___
+
+### ResponseQuestionActionRange
+
+Ƭ **ResponseQuestionActionRange**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `id` | `string` |
+| `payload` | { `emoji`: `string` ; `max`: `number` ; `min`: `number` ; `validation`: ``"min_max"``  } |
+| `payload.emoji` | `string` |
+| `payload.max` | `number` |
+| `payload.min` | `number` |
+| `payload.validation` | ``"min_max"`` |
+| `type` | ``"number_input"`` |
+
+___
+
+### ResponseQuestionActionScoring
+
+Ƭ **ResponseQuestionActionScoring**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `id` | `string` |
+| `payload` | { `emoji`: `string` ; `value`: `number`  } |
+| `payload.emoji` | `string` |
+| `payload.value` | `number` |
+| `type` | ``"scoring"`` |
+
+___
+
+### ResponseQuestionActionSkip
+
+Ƭ **ResponseQuestionActionSkip**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `id` | `string` |
+| `payload` | `any` |
+| `type` | ``"skip"`` |
+
+___
+
+### ResponseQuestionCTA
+
+Ƭ **ResponseQuestionCTA**: [`ResponseQuestionCTANone`](README.md#responsequestionctanone) \| [`ResponseQuestionCTAChoices`](README.md#responsequestionctachoices) \| [`ResponseQuestionCTAScores`](README.md#responsequestionctascores) \| [`ResponseQuestionCTAInput`](README.md#responsequestionctainput) \| [`ResponseQuestionCTARange`](README.md#responsequestionctarange) \| [`ResponseQuestionCTAAppStoreRating`](README.md#responsequestionctaappstorerating)
+
+___
+
+### ResponseQuestionCTAAppStoreRating
+
+Ƭ **ResponseQuestionCTAAppStoreRating**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `type` | ``"appstore_rating"`` |
+
+___
+
+### ResponseQuestionCTAChoices
+
+Ƭ **ResponseQuestionCTAChoices**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `choices` | [`ResponseQuestionActionButton`](README.md#responsequestionactionbutton)[] |
+| `type` | ``"multiple_choice"`` \| ``"pmf"`` \| ``"link"`` |
+
+___
+
+### ResponseQuestionCTAInput
+
+Ƭ **ResponseQuestionCTAInput**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `input` | [`ResponseQuestionActionInput`](README.md#responsequestionactioninput) |
+| `type` | ``"input"`` |
+
+___
+
+### ResponseQuestionCTANone
+
+Ƭ **ResponseQuestionCTANone**: `Object`
+
+CTA
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `type` | ``"none"`` |
+
+___
+
+### ResponseQuestionCTARange
+
+Ƭ **ResponseQuestionCTARange**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `range` | [`ResponseQuestionActionRange`](README.md#responsequestionactionrange) |
+| `type` | ``"range"`` |
+
+___
+
+### ResponseQuestionCTAScores
+
+Ƭ **ResponseQuestionCTAScores**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `scores` | [`ResponseQuestionActionScoring`](README.md#responsequestionactionscoring)[] |
+| `type` | ``"scoring"`` \| ``"nps"`` \| ``"ces"`` \| ``"csat"`` |
+
+___
+
+### ResponseQuestionMessage
+
+Ƭ **ResponseQuestionMessage**: { `id`: `string`  } & [`ResponseQuestionMessageText`](README.md#responsequestionmessagetext)
+
+___
+
+### ResponseQuestionMessageText
+
+Ƭ **ResponseQuestionMessageText**: `Object`
+
+Messages
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `text` | `string` |
+| `type` | ``"text"`` |
+
+___
+
+### ResponseStatus
+
+Ƭ **ResponseStatus**: ``"started"`` \| ``"ended"`` \| ``"closed"`` \| ``"interrupted"``
 
 ___
 
@@ -93,6 +583,12 @@ This is the Screeb tag options object.
 | :------ | :------ | :------ |
 | `screebEndpoint?` | `string` | Please don't do this. |
 | `window?` | `Window` | If you're running Screeb tag in an iframe, please set the inner window here. |
+
+___
+
+### SurveyHooks
+
+Ƭ **SurveyHooks**: { [key in HookType]?: Function }
 
 ## Functions
 
@@ -392,7 +888,7 @@ ___
 
 ### init
 
-▸ **init**(`websiteId`, `userId?`, `userProperties?`): `void` \| `Promise`<`unknown`\>
+▸ **init**(`websiteId`, `userId?`, `userProperties?`, `hooks?`): `void` \| `Promise`<`unknown`\>
 
 Initializes Screeb tag.
 
@@ -410,7 +906,12 @@ Screeb.init(
     plan: '<user-plan>',
     last_seen_at: new Date(),
     authenticated: true
-  }
+  },
+  {
+    onSDKReady: (payload) => {
+       console.log("SDK is ready", payload);
+    },
+  },
 );
 ```
 
@@ -421,6 +922,7 @@ Screeb.init(
 | `websiteId` | `string` | Your website/channel id. |
 | `userId?` | `string` | The unique identifier of your user. |
 | `userProperties?` | [`PropertyRecord`](README.md#propertyrecord) | The properties of your user. ```text Requirements: - Property names must be limited to 128 characters - No more than 1000 attributes - Supported types for values: string, number, boolean and Date ``` |
+| `hooks?` | [`GlobalHooks`](README.md#globalhooks) | Hooks to be called when SDK is ready or a survey is showed, started, completed, hidden or when a question is replied. |
 
 #### Returns
 
@@ -498,7 +1000,7 @@ ___
 
 ### surveyStart
 
-▸ **surveyStart**(`surveyId`, `allowMultipleResponses?`, `hiddenFields?`): `void` \| `Promise`<`unknown`\>
+▸ **surveyStart**(`surveyId`, `allowMultipleResponses?`, `hiddenFields?`, `hooks?`): `void` \| `Promise`<`unknown`\>
 
 Starts a survey by its ID.
 
@@ -513,7 +1015,12 @@ Screeb.surveyStart(
   {
     color: "green",
     article_id: 42
-  }
+  },
+  {
+    onSurveyShowed: (payload) => {
+       console.log("Survey showed", payload);
+    },
+  },
 );
 ```
 
@@ -524,6 +1031,7 @@ Screeb.surveyStart(
 | `surveyId` | `string` | `undefined` |
 | `allowMultipleResponses` | `boolean` | `true` |
 | `hiddenFields` | [`PropertyRecord`](README.md#propertyrecord) | `{}` |
+| `hooks` | `undefined` \| [`SurveyHooks`](README.md#surveyhooks) | `undefined` |
 
 #### Returns
 

@@ -309,18 +309,29 @@ export class Screeb {
    *   {
    *     color: "green",
    *     article_id: 42
-   *   }
+   *   },
+   *   {
+   *     onSurveyShowed: (payload) => {
+   *        console.log("Survey showed", payload);
+   *     },
+   *   },
    * );
    * ```
    */
   public async surveyStart(
     surveyId: string,
     allowMultipleResponses: boolean,
-    hiddenFields: _Screeb.PropertyRecord
+    hiddenFields: _Screeb.PropertyRecord,
+    hooks?: _Screeb.SurveyHooks
   ) {
     await this.ensureScreeb("surveyStart");
 
-    return _Screeb.surveyStart(surveyId, allowMultipleResponses, hiddenFields);
+    return _Screeb.surveyStart(
+      surveyId,
+      allowMultipleResponses,
+      hiddenFields,
+      hooks
+    );
   }
 
   /**
@@ -388,20 +399,26 @@ export class Screeb {
    *     plan: '<user-plan>',
    *     last_seen_at: new Date(),
    *     authenticated: true
-   *   }
+   *   },
+   *   {
+   *     onSDKReady: (payload) => {
+   *        console.log("SDK is ready", payload);
+   *     },
+   *   },
    * );
    * ```
    */
   public async init(
     websiteId: string,
     userId?: string,
-    userProperties?: _Screeb.PropertyRecord
+    userProperties?: _Screeb.PropertyRecord,
+    hooks?: _Screeb.GlobalHooks
   ) {
     await this.ensureScreeb("init", true);
 
     this.isInitialized = true;
 
-    return await _Screeb.init(websiteId, userId, userProperties);
+    return await _Screeb.init(websiteId, userId, userProperties, hooks);
   }
 
   /**

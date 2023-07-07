@@ -18,6 +18,12 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         lastname: "Smith",
         org_size: 20,
       }}
+      hooks={{
+        onSDKReady: (payload) => {
+          // eslint-disable-next-line no-console
+          console.log("onSDKReady", payload);
+        },
+      }}
     >
       <App />
     </ScreebProvider>
