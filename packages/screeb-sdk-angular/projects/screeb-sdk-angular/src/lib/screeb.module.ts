@@ -24,7 +24,7 @@ export class ScreebModule {
    *     authenticated: true
    *   },
    *   {
-   *     onSDKReady: (payload) => {
+   *     onReady: (payload) => {
    *        console.log("SDK is ready", payload);
    *     },
    *   },

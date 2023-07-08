@@ -199,7 +199,7 @@ export type ResponseHookSurveyShowed = {
   };
   user: {
     anonymous_id: string;
-    id: string;
+    user_id: string;
   };
   items: QuestionAnswerPair[];
 };
@@ -207,7 +207,7 @@ export type ResponseHookSurveyShowed = {
 export type ResponseHookSDKReady = {
   user: {
     anonymous_id: string;
-    id: string;
+    user_id: string;
   };
 };
 
@@ -223,7 +223,7 @@ export type ResponseHookSurveyStarted = {
   };
   user: {
     anonymous_id: string;
-    id: string;
+    user_id: string;
   };
 };
 
@@ -240,7 +240,7 @@ export type ResponseHookSurveyHidden = {
   };
   user: {
     anonymous_id: string;
-    id: string;
+    user_id: string;
   };
   items: QuestionAnswerPair[];
 };
@@ -258,7 +258,7 @@ export type ResponseHookSurveyReplied = {
   };
   user: {
     anonymous_id: string;
-    id: string;
+    user_id: string;
   };
   items: QuestionAnswerPair[];
 };
@@ -275,13 +275,13 @@ export type ResponseHookSurveyCompleted = {
   };
   user: {
     anonymous_id: string;
-    id: string;
+    user_id: string;
   };
   items: QuestionAnswerPair[];
 };
 
 export type ResponseHook = {
-  onSDKReady: ResponseHookSDKReady;
+  onReady: ResponseHookSDKReady;
   onSurveyShowed: ResponseHookSurveyShowed;
   onSurveyStarted: ResponseHookSurveyStarted;
   onQuestionReplied: ResponseHookSurveyReplied;
@@ -291,7 +291,7 @@ export type ResponseHook = {
 
 export type GlobalHooks = {
   // eslint-disable-next-line no-unused-vars
-  [key in HookType | "onSDKReady"]?: (payload: ResponseHook[key]) => void;
+  [key in HookType | "onReady"]?: (payload: ResponseHook[key]) => void;
 };
 export type SurveyHooks = {
   // eslint-disable-next-line no-unused-vars
@@ -429,7 +429,7 @@ export const load = (options: ScreebOptions = {}) =>
  *     authenticated: true
  *   },
  *   {
- *     onSDKReady: (payload) => {
+ *     onReady: (payload) => {
  *        console.log("SDK is ready", payload);
  *     },
  *   },

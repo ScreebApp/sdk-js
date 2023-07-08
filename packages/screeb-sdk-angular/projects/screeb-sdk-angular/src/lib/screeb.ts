@@ -159,13 +159,13 @@ export class Screeb {
    * ```ts
    * console.log(await this.screeb.identityGet());
    * // {
+   * //   channel_id: "<UUID>",
    * //   anonymous_id: "<UUID>",
    * //   user_id: "<UUID>",
+   * //   is_ready: true,
    * //   session_id: "<UUID>",
    * //   session_start: "2023-05-04T16:30:15.882Z",
    * //   session_end: "2023-05-04T17:02:09.087Z",
-   * //   channel_id: "<UUID>",
-   * //   is_ready: true,
    * // }
    * ```
    */
@@ -401,7 +401,7 @@ export class Screeb {
    *     authenticated: true
    *   },
    *   {
-   *     onSDKReady: (payload) => {
+   *     onReady: (payload) => {
    *        console.log("SDK is ready", payload);
    *     },
    *   },

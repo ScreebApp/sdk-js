@@ -71,7 +71,7 @@
 
 ### GlobalHooks
 
-Ƭ **GlobalHooks**: { [key in HookType \| "onSDKReady"]?: Function }
+Ƭ **GlobalHooks**: { [key in HookType \| "onReady"]?: Function }
 
 ___
 
@@ -109,9 +109,9 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `answer?` | [`ResponseAnswer`](README.md#responseanswer) |
+| Name       | Type                                             |
+| :--------- | :----------------------------------------------- |
+| `answer?`  | [`ResponseAnswer`](README.md#responseanswer)     |
 | `question` | [`ResponseQuestion`](README.md#responsequestion) |
 
 ___
@@ -122,12 +122,12 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `created_at` | `Date` |
-| `id` | `string` |
-| `question_id` | `string` |
-| `values` | [`ResponseAnswerValue`](README.md#responseanswervalue)[] |
+| Name          | Type                                                     |
+| :------------ | :------------------------------------------------------- |
+| `created_at`  | `Date`                                                   |
+| `id`          | `string`                                                 |
+| `question_id` | `string`                                                 |
+| `values`      | [`ResponseAnswerValue`](README.md#responseanswervalue)[] |
 
 ___
 
@@ -175,14 +175,14 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `onQuestionReplied` | [`ResponseHookSurveyReplied`](README.md#responsehooksurveyreplied) |
-| `onSDKReady` | [`ResponseHookSDKReady`](README.md#responsehooksdkready) |
+| Name                | Type                                                                   |
+| :------------------ | :--------------------------------------------------------------------- |
+| `onQuestionReplied` | [`ResponseHookSurveyReplied`](README.md#responsehooksurveyreplied)     |
+| `onReady`           | [`ResponseHookSDKReady`](README.md#responsehooksdkready)               |
 | `onSurveyCompleted` | [`ResponseHookSurveyCompleted`](README.md#responsehooksurveycompleted) |
-| `onSurveyHidden` | [`ResponseHookSurveyHidden`](README.md#responsehooksurveyhidden) |
-| `onSurveyShowed` | [`ResponseHookSurveyShowed`](README.md#responsehooksurveyshowed) |
-| `onSurveyStarted` | [`ResponseHookSurveyStarted`](README.md#responsehooksurveystarted) |
+| `onSurveyHidden`    | [`ResponseHookSurveyHidden`](README.md#responsehooksurveyhidden)       |
+| `onSurveyShowed`    | [`ResponseHookSurveyShowed`](README.md#responsehooksurveyshowed)       |
+| `onSurveyStarted`   | [`ResponseHookSurveyStarted`](README.md#responsehooksurveystarted)     |
 
 ___
 
@@ -192,11 +192,11 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `user` | { `anonymous_id`: `string` ; `id`: `string`  } |
-| `user.anonymous_id` | `string` |
-| `user.id` | `string` |
+| Name                | Type                                                |
+| :------------------ | :-------------------------------------------------- |
+| `user`              | { `anonymous_id`: `string` ; `user_id`: `string`  } |
+| `user.anonymous_id` | `string`                                            |
+| `user.user_id`      | `string`                                            |
 
 ___
 
@@ -206,19 +206,19 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `items` | [`QuestionAnswerPair`](README.md#questionanswerpair)[] |
-| `response` | { `id`: `string`  } |
-| `response.id` | `string` |
-| `survey` | { `id`: `string` ; `survey_format`: ``"conversationnal"`` \| ``"cards"`` \| `undefined` ; `survey_position`: `number` ; `survey_size`: `number`  } |
-| `survey.id` | `string` |
-| `survey.survey_format` | ``"conversationnal"`` \| ``"cards"`` \| `undefined` |
-| `survey.survey_position` | `number` |
-| `survey.survey_size` | `number` |
-| `user` | { `anonymous_id`: `string` ; `id`: `string`  } |
-| `user.anonymous_id` | `string` |
-| `user.id` | `string` |
+| Name                     | Type                                                                                                                                               |
+| :----------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `items`                  | [`QuestionAnswerPair`](README.md#questionanswerpair)[]                                                                                             |
+| `response`               | { `id`: `string`  }                                                                                                                                |
+| `response.id`            | `string`                                                                                                                                           |
+| `survey`                 | { `id`: `string` ; `survey_format`: ``"conversationnal"`` \| ``"cards"`` \| `undefined` ; `survey_position`: `number` ; `survey_size`: `number`  } |
+| `survey.id`              | `string`                                                                                                                                           |
+| `survey.survey_format`   | ``"conversationnal"`` \| ``"cards"`` \| `undefined`                                                                                                |
+| `survey.survey_position` | `number`                                                                                                                                           |
+| `survey.survey_size`     | `number`                                                                                                                                           |
+| `user`                   | { `anonymous_id`: `string` ; `user_id`: `string`  }                                                                                                |
+| `user.anonymous_id`      | `string`                                                                                                                                           |
+| `user.user_id`           | `string`                                                                                                                                           |
 
 ___
 
@@ -228,20 +228,20 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `items` | [`QuestionAnswerPair`](README.md#questionanswerpair)[] |
-| `response` | { `hide_reason`: [`ResponseStatus`](README.md#responsestatus) ; `id`: `string`  } |
-| `response.hide_reason` | [`ResponseStatus`](README.md#responsestatus) |
-| `response.id` | `string` |
-| `survey` | { `id`: `string` ; `survey_format`: ``"conversationnal"`` \| ``"cards"`` \| `undefined` ; `survey_position`: `number` ; `survey_size`: `number`  } |
-| `survey.id` | `string` |
-| `survey.survey_format` | ``"conversationnal"`` \| ``"cards"`` \| `undefined` |
-| `survey.survey_position` | `number` |
-| `survey.survey_size` | `number` |
-| `user` | { `anonymous_id`: `string` ; `id`: `string`  } |
-| `user.anonymous_id` | `string` |
-| `user.id` | `string` |
+| Name                     | Type                                                                                                                                               |
+| :----------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `items`                  | [`QuestionAnswerPair`](README.md#questionanswerpair)[]                                                                                             |
+| `response`               | { `hide_reason`: [`ResponseStatus`](README.md#responsestatus) ; `id`: `string`  }                                                                  |
+| `response.hide_reason`   | [`ResponseStatus`](README.md#responsestatus)                                                                                                       |
+| `response.id`            | `string`                                                                                                                                           |
+| `survey`                 | { `id`: `string` ; `survey_format`: ``"conversationnal"`` \| ``"cards"`` \| `undefined` ; `survey_position`: `number` ; `survey_size`: `number`  } |
+| `survey.id`              | `string`                                                                                                                                           |
+| `survey.survey_format`   | ``"conversationnal"`` \| ``"cards"`` \| `undefined`                                                                                                |
+| `survey.survey_position` | `number`                                                                                                                                           |
+| `survey.survey_size`     | `number`                                                                                                                                           |
+| `user`                   | { `anonymous_id`: `string` ; `user_id`: `string`  }                                                                                                |
+| `user.anonymous_id`      | `string`                                                                                                                                           |
+| `user.user_id`           | `string`                                                                                                                                           |
 
 ___
 
@@ -251,20 +251,20 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `items` | [`QuestionAnswerPair`](README.md#questionanswerpair)[] |
-| `response` | { `id`: `string` ; `status`: [`ResponseStatus`](README.md#responsestatus)  } |
-| `response.id` | `string` |
-| `response.status` | [`ResponseStatus`](README.md#responsestatus) |
-| `survey` | { `id`: `string` ; `survey_format`: ``"conversationnal"`` \| ``"cards"`` \| `undefined` ; `survey_position`: `number` ; `survey_size`: `number`  } |
-| `survey.id` | `string` |
-| `survey.survey_format` | ``"conversationnal"`` \| ``"cards"`` \| `undefined` |
-| `survey.survey_position` | `number` |
-| `survey.survey_size` | `number` |
-| `user` | { `anonymous_id`: `string` ; `id`: `string`  } |
-| `user.anonymous_id` | `string` |
-| `user.id` | `string` |
+| Name                     | Type                                                                                                                                               |
+| :----------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `items`                  | [`QuestionAnswerPair`](README.md#questionanswerpair)[]                                                                                             |
+| `response`               | { `id`: `string` ; `status`: [`ResponseStatus`](README.md#responsestatus)  }                                                                       |
+| `response.id`            | `string`                                                                                                                                           |
+| `response.status`        | [`ResponseStatus`](README.md#responsestatus)                                                                                                       |
+| `survey`                 | { `id`: `string` ; `survey_format`: ``"conversationnal"`` \| ``"cards"`` \| `undefined` ; `survey_position`: `number` ; `survey_size`: `number`  } |
+| `survey.id`              | `string`                                                                                                                                           |
+| `survey.survey_format`   | ``"conversationnal"`` \| ``"cards"`` \| `undefined`                                                                                                |
+| `survey.survey_position` | `number`                                                                                                                                           |
+| `survey.survey_size`     | `number`                                                                                                                                           |
+| `user`                   | { `anonymous_id`: `string` ; `user_id`: `string`  }                                                                                                |
+| `user.anonymous_id`      | `string`                                                                                                                                           |
+| `user.user_id`           | `string`                                                                                                                                           |
 
 ___
 
@@ -274,19 +274,19 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `items` | [`QuestionAnswerPair`](README.md#questionanswerpair)[] |
-| `response` | { `id`: `string`  } |
-| `response.id` | `string` |
-| `survey` | { `id`: `string` ; `survey_format`: ``"conversationnal"`` \| ``"cards"`` \| `undefined` ; `survey_position`: `number` ; `survey_size`: `number`  } |
-| `survey.id` | `string` |
-| `survey.survey_format` | ``"conversationnal"`` \| ``"cards"`` \| `undefined` |
-| `survey.survey_position` | `number` |
-| `survey.survey_size` | `number` |
-| `user` | { `anonymous_id`: `string` ; `id`: `string`  } |
-| `user.anonymous_id` | `string` |
-| `user.id` | `string` |
+| Name                     | Type                                                                                                                                               |
+| :----------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `items`                  | [`QuestionAnswerPair`](README.md#questionanswerpair)[]                                                                                             |
+| `response`               | { `id`: `string`  }                                                                                                                                |
+| `response.id`            | `string`                                                                                                                                           |
+| `survey`                 | { `id`: `string` ; `survey_format`: ``"conversationnal"`` \| ``"cards"`` \| `undefined` ; `survey_position`: `number` ; `survey_size`: `number`  } |
+| `survey.id`              | `string`                                                                                                                                           |
+| `survey.survey_format`   | ``"conversationnal"`` \| ``"cards"`` \| `undefined`                                                                                                |
+| `survey.survey_position` | `number`                                                                                                                                           |
+| `survey.survey_size`     | `number`                                                                                                                                           |
+| `user`                   | { `anonymous_id`: `string` ; `user_id`: `string`  }                                                                                                |
+| `user.anonymous_id`      | `string`                                                                                                                                           |
+| `user.user_id`           | `string`                                                                                                                                           |
 
 ___
 
@@ -296,18 +296,18 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `response` | { `id`: `string`  } |
-| `response.id` | `string` |
-| `survey` | { `id`: `string` ; `survey_format`: ``"conversationnal"`` \| ``"cards"`` \| `undefined` ; `survey_position`: `number` ; `survey_size`: `number`  } |
-| `survey.id` | `string` |
-| `survey.survey_format` | ``"conversationnal"`` \| ``"cards"`` \| `undefined` |
-| `survey.survey_position` | `number` |
-| `survey.survey_size` | `number` |
-| `user` | { `anonymous_id`: `string` ; `id`: `string`  } |
-| `user.anonymous_id` | `string` |
-| `user.id` | `string` |
+| Name                     | Type                                                                                                                                               |
+| :----------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `response`               | { `id`: `string`  }                                                                                                                                |
+| `response.id`            | `string`                                                                                                                                           |
+| `survey`                 | { `id`: `string` ; `survey_format`: ``"conversationnal"`` \| ``"cards"`` \| `undefined` ; `survey_position`: `number` ; `survey_size`: `number`  } |
+| `survey.id`              | `string`                                                                                                                                           |
+| `survey.survey_format`   | ``"conversationnal"`` \| ``"cards"`` \| `undefined`                                                                                                |
+| `survey.survey_position` | `number`                                                                                                                                           |
+| `survey.survey_size`     | `number`                                                                                                                                           |
+| `user`                   | { `anonymous_id`: `string` ; `user_id`: `string`  }                                                                                                |
+| `user.anonymous_id`      | `string`                                                                                                                                           |
+| `user.user_id`           | `string`                                                                                                                                           |
 
 ___
 
@@ -317,13 +317,13 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `call_to_action` | [`ResponseQuestionCTA`](README.md#responsequestioncta) |
-| `ends` | `boolean` |
-| `id` | `string` |
-| `messages` | [`ResponseQuestionMessage`](README.md#responsequestionmessage)[] |
-| `skip_action?` | [`ResponseQuestionActionSkip`](README.md#responsequestionactionskip) |
+| Name             | Type                                                                 |
+| :--------------- | :------------------------------------------------------------------- |
+| `call_to_action` | [`ResponseQuestionCTA`](README.md#responsequestioncta)               |
+| `ends`           | `boolean`                                                            |
+| `id`             | `string`                                                             |
+| `messages`       | [`ResponseQuestionMessage`](README.md#responsequestionmessage)[]     |
+| `skip_action?`   | [`ResponseQuestionActionSkip`](README.md#responsequestionactionskip) |
 
 ___
 
@@ -335,14 +335,14 @@ Action
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `id` | `string` |
-| `payload` | { `emoji`: `string` ; `label`: `string` ; `url?`: `string`  } |
-| `payload.emoji` | `string` |
-| `payload.label` | `string` |
-| `payload.url?` | `string` |
-| `type` | ``"button"`` |
+| Name            | Type                                                          |
+| :-------------- | :------------------------------------------------------------ |
+| `id`            | `string`                                                      |
+| `payload`       | { `emoji`: `string` ; `label`: `string` ; `url?`: `string`  } |
+| `payload.emoji` | `string`                                                      |
+| `payload.label` | `string`                                                      |
+| `payload.url?`  | `string`                                                      |
+| `type`          | ``"button"``                                                  |
 
 ___
 
@@ -352,12 +352,12 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `id` | `string` |
-| `payload` | { `validation`: [`ResponseQuestionActionInputValidation`](README.md#responsequestionactioninputvalidation)  } |
-| `payload.validation` | [`ResponseQuestionActionInputValidation`](README.md#responsequestionactioninputvalidation) |
-| `type` | ``"text_input"`` |
+| Name                 | Type                                                                                                          |
+| :------------------- | :------------------------------------------------------------------------------------------------------------ |
+| `id`                 | `string`                                                                                                      |
+| `payload`            | { `validation`: [`ResponseQuestionActionInputValidation`](README.md#responsequestionactioninputvalidation)  } |
+| `payload.validation` | [`ResponseQuestionActionInputValidation`](README.md#responsequestionactioninputvalidation)                    |
+| `type`               | ``"text_input"``                                                                                              |
 
 ___
 
@@ -373,14 +373,14 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `id` | `string` |
-| `payload` | { `emoji`: `string` ; `label`: `string` ; `link`: `string`  } |
-| `payload.emoji` | `string` |
-| `payload.label` | `string` |
-| `payload.link` | `string` |
-| `type` | ``"link"`` |
+| Name            | Type                                                          |
+| :-------------- | :------------------------------------------------------------ |
+| `id`            | `string`                                                      |
+| `payload`       | { `emoji`: `string` ; `label`: `string` ; `link`: `string`  } |
+| `payload.emoji` | `string`                                                      |
+| `payload.label` | `string`                                                      |
+| `payload.link`  | `string`                                                      |
+| `type`          | ``"link"``                                                    |
 
 ___
 
@@ -390,15 +390,15 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `id` | `string` |
-| `payload` | { `emoji`: `string` ; `max`: `number` ; `min`: `number` ; `validation`: ``"min_max"``  } |
-| `payload.emoji` | `string` |
-| `payload.max` | `number` |
-| `payload.min` | `number` |
-| `payload.validation` | ``"min_max"`` |
-| `type` | ``"number_input"`` |
+| Name                 | Type                                                                                     |
+| :------------------- | :--------------------------------------------------------------------------------------- |
+| `id`                 | `string`                                                                                 |
+| `payload`            | { `emoji`: `string` ; `max`: `number` ; `min`: `number` ; `validation`: ``"min_max"``  } |
+| `payload.emoji`      | `string`                                                                                 |
+| `payload.max`        | `number`                                                                                 |
+| `payload.min`        | `number`                                                                                 |
+| `payload.validation` | ``"min_max"``                                                                            |
+| `type`               | ``"number_input"``                                                                       |
 
 ___
 
@@ -408,13 +408,13 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `id` | `string` |
-| `payload` | { `emoji`: `string` ; `value`: `number`  } |
-| `payload.emoji` | `string` |
-| `payload.value` | `number` |
-| `type` | ``"scoring"`` |
+| Name            | Type                                       |
+| :-------------- | :----------------------------------------- |
+| `id`            | `string`                                   |
+| `payload`       | { `emoji`: `string` ; `value`: `number`  } |
+| `payload.emoji` | `string`                                   |
+| `payload.value` | `number`                                   |
+| `type`          | ``"scoring"``                              |
 
 ___
 
@@ -424,11 +424,11 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `id` | `string` |
-| `payload` | `any` |
-| `type` | ``"skip"`` |
+| Name      | Type       |
+| :-------- | :--------- |
+| `id`      | `string`   |
+| `payload` | `any`      |
+| `type`    | ``"skip"`` |
 
 ___
 
@@ -444,8 +444,8 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
+| Name   | Type                  |
+| :----- | :-------------------- |
 | `type` | ``"appstore_rating"`` |
 
 ___
@@ -456,10 +456,10 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type                                                                       |
+| :-------- | :------------------------------------------------------------------------- |
 | `choices` | [`ResponseQuestionActionButton`](README.md#responsequestionactionbutton)[] |
-| `type` | ``"multiple_choice"`` \| ``"pmf"`` \| ``"link"`` |
+| `type`    | ``"multiple_choice"`` \| ``"pmf"`` \| ``"link"``                           |
 
 ___
 
@@ -469,10 +469,10 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
+| Name    | Type                                                                   |
+| :------ | :--------------------------------------------------------------------- |
 | `input` | [`ResponseQuestionActionInput`](README.md#responsequestionactioninput) |
-| `type` | ``"input"`` |
+| `type`  | ``"input"``                                                            |
 
 ___
 
@@ -484,8 +484,8 @@ CTA
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
+| Name   | Type       |
+| :----- | :--------- |
 | `type` | ``"none"`` |
 
 ___
@@ -496,10 +496,10 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
+| Name    | Type                                                                   |
+| :------ | :--------------------------------------------------------------------- |
 | `range` | [`ResponseQuestionActionRange`](README.md#responsequestionactionrange) |
-| `type` | ``"range"`` |
+| `type`  | ``"range"``                                                            |
 
 ___
 
@@ -509,10 +509,10 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
+| Name     | Type                                                                         |
+| :------- | :--------------------------------------------------------------------------- |
 | `scores` | [`ResponseQuestionActionScoring`](README.md#responsequestionactionscoring)[] |
-| `type` | ``"scoring"`` \| ``"nps"`` \| ``"ces"`` \| ``"csat"`` |
+| `type`   | ``"scoring"`` \| ``"nps"`` \| ``"ces"`` \| ``"csat"``                        |
 
 ___
 
@@ -530,9 +530,9 @@ Messages
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `text` | `string` |
+| Name   | Type       |
+| :----- | :--------- |
+| `text` | `string`   |
 | `type` | ``"text"`` |
 
 ___
@@ -551,15 +551,15 @@ This is the object returned by the function `identityGet()`.
 
 #### Type declaration
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `anonymous_id` | `string` | Anonymous id given to each user |
-| `channel_id` | `string` | The current channel id with which the tag was initialized |
-| `is_ready` | `boolean` | `true` if the tag us loaded, initialized and ready to rock |
-| `session_end` | `string` | The current user session end time |
-| `session_id` | `string` | The current user session id |
-| `session_start` | `string` | The current user session start time |
-| `user_id` | `string` | The authenticated id assigned to the user. |
+| Name            | Type      | Description                                                |
+| :-------------- | :-------- | :--------------------------------------------------------- |
+| `channel_id`    | `string`  | The current channel id with which the tag was initialized  |
+| `anonymous_id`  | `string`  | Anonymous id given to each user                            |
+| `user_id`       | `string`  | The authenticated id assigned to the user.                 |
+| `is_ready`      | `boolean` | `true` if the tag us loaded, initialized and ready to rock |
+| `session_id`    | `string`  | The current user session id                                |
+| `session_start` | `string`  | The current user session start time                        |
+| `session_end`   | `string`  | The current user session end time                          |
 
 ___
 
@@ -579,10 +579,10 @@ This is the Screeb tag options object.
 
 #### Type declaration
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `screebEndpoint?` | `string` | Please don't do this. |
-| `window?` | `Window` | If you're running Screeb tag in an iframe, please set the inner window here. |
+| Name              | Type     | Description                                                                  |
+| :---------------- | :------- | :--------------------------------------------------------------------------- |
+| `screebEndpoint?` | `string` | Please don't do this.                                                        |
+| `window?`         | `Window` | If you're running Screeb tag in an iframe, please set the inner window here. |
 
 ___
 
@@ -678,9 +678,9 @@ Screeb.eventTrack(
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `eventName` | `string` | The event name. |
+| Name               | Type                                         | Description                                                                                                                                                                                               |
+| :----------------- | :------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `eventName`        | `string`                                     | The event name.                                                                                                                                                                                           |
 | `eventProperties?` | [`PropertyRecord`](README.md#propertyrecord) | The properties of your event. ```text Requirements: - Property names must be limited to 128 characters - No more than 1000 attributes - Supported types for values: string, number, boolean and Date. ``` |
 
 #### Returns
@@ -715,9 +715,9 @@ Screeb.identity(
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `userId` | `string` | The unique identifier of your user. |
+| Name              | Type                                         | Description                                                                                                                                                                                              |
+| :---------------- | :------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `userId`          | `string`                                     | The unique identifier of your user.                                                                                                                                                                      |
 | `userProperties?` | [`PropertyRecord`](README.md#propertyrecord) | The properties of your user. ```text Requirements: - Property names must be limited to 128 characters - No more than 1000 attributes - Supported types for values: string, number, boolean and Date. ``` |
 
 #### Returns
@@ -782,10 +782,10 @@ Screeb.identityGroupAssign(
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `groupName` | `string` |  |
-| `groupType?` | `string` |  |
+| Name               | Type                                         | Description                                                                                                                                                                                                    |
+| :----------------- | :------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `groupName`        | `string`                                     |                                                                                                                                                                                                                |
+| `groupType?`       | `string`                                     |                                                                                                                                                                                                                |
 | `groupProperties?` | [`PropertyRecord`](README.md#propertyrecord) | The properties of your user group. ```text Requirements: - Property names must be limited to 128 characters - No more than 1000 attributes - Supported types for values: string, number, boolean and Date. ``` |
 
 #### Returns
@@ -810,9 +810,9 @@ Screeb.identityGroupUnassign('company', 'Apple');
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `groupName` | `string` | The name of your user group. |
+| Name         | Type     | Description                  |
+| :----------- | :------- | :--------------------------- |
+| `groupName`  | `string` | The name of your user group. |
 | `groupType?` | `string` | The type of your user group. |
 
 #### Returns
@@ -855,8 +855,8 @@ Screeb.identityProperties(
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name             | Type                                         | Description                                                                                                                                                                                              |
+| :--------------- | :------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `userProperties` | [`PropertyRecord`](README.md#propertyrecord) | The properties of your user. ```text Requirements: - Property names must be limited to 128 characters - No more than 1000 attributes - Supported types for values: string, number, boolean and Date. ``` |
 
 #### Returns
@@ -908,7 +908,7 @@ Screeb.init(
     authenticated: true
   },
   {
-    onSDKReady: (payload) => {
+    onReady: (payload) => {
        console.log("SDK is ready", payload);
     },
   },
@@ -917,12 +917,12 @@ Screeb.init(
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `websiteId` | `string` | Your website/channel id. |
-| `userId?` | `string` | The unique identifier of your user. |
+| Name              | Type                                         | Description                                                                                                                                                                                             |
+| :---------------- | :------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `websiteId`       | `string`                                     | Your website/channel id.                                                                                                                                                                                |
+| `userId?`         | `string`                                     | The unique identifier of your user.                                                                                                                                                                     |
 | `userProperties?` | [`PropertyRecord`](README.md#propertyrecord) | The properties of your user. ```text Requirements: - Property names must be limited to 128 characters - No more than 1000 attributes - Supported types for values: string, number, boolean and Date ``` |
-| `hooks?` | [`GlobalHooks`](README.md#globalhooks) | Hooks to be called when SDK is ready or a survey is showed, started, completed, hidden or when a question is replied. |
+| `hooks?`          | [`GlobalHooks`](README.md#globalhooks)       | Hooks to be called when SDK is ready or a survey is showed, started, completed, hidden or when a question is replied.                                                                                   |
 
 #### Returns
 
@@ -968,8 +968,8 @@ Screeb.load();
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name      | Type                                       | Description            |
+| :-------- | :----------------------------------------- | :--------------------- |
 | `options` | [`ScreebOptions`](README.md#screeboptions) | Screeb module options. |
 
 #### Returns
@@ -1026,12 +1026,12 @@ Screeb.surveyStart(
 
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `surveyId` | `string` | `undefined` |
-| `allowMultipleResponses` | `boolean` | `true` |
-| `hiddenFields` | [`PropertyRecord`](README.md#propertyrecord) | `{}` |
-| `hooks` | `undefined` \| [`SurveyHooks`](README.md#surveyhooks) | `undefined` |
+| Name                     | Type                                                  | Default value |
+| :----------------------- | :---------------------------------------------------- | :------------ |
+| `surveyId`               | `string`                                              | `undefined`   |
+| `allowMultipleResponses` | `boolean`                                             | `true`        |
+| `hiddenFields`           | [`PropertyRecord`](README.md#propertyrecord)          | `{}`          |
+| `hooks`                  | `undefined` \| [`SurveyHooks`](README.md#surveyhooks) | `undefined`   |
 
 #### Returns
 

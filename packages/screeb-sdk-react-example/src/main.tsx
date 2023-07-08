@@ -19,9 +19,9 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         org_size: 20,
       }}
       hooks={{
-        onSDKReady: (payload) => {
+        onReady: (payload) => {
           // eslint-disable-next-line no-console
-          console.log("onSDKReady", payload);
+          console.log("onReady", payload);
         },
       }}
     >
