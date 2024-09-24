@@ -364,11 +364,11 @@ ___
 
 ### InitFunction
 
-Ƭ **InitFunction**: (`websiteId`: `string`, `userId?`: `string`, `userProperties?`: `PropertyRecord`) => `Promise`<`void`\>
+Ƭ **InitFunction**: (`websiteId`: `string`, `userId?`: `string`, `userProperties?`: `PropertyRecord`, `hooks?`: `Hooks`, `language?`: `string`) => `Promise`<`void`\>
 
 #### Type declaration
 
-▸ (`websiteId`, `userId?`, `userProperties?`): `Promise`<`void`\>
+▸ (`websiteId`, `userId?`, `userProperties?`, `hooks?`, `language?`): `Promise`<`void`\>
 
 Initializes Screeb tag.
 
@@ -379,6 +379,8 @@ Initializes Screeb tag.
 | `websiteId` | `string` | Your website/channel id. |
 | `userId?` | `string` | The unique identifier of your user. |
 | `userProperties?` | `PropertyRecord` | The properties of your user. ```text Requirements: - Property names must be limited to 128 characters - No more than 1000 attributes - Supported types for values: string, number, boolean and Date ``` |
+| `hooks?` | `Hooks` | - |
+| `language?` | `string` | Force a specific language for the tag. eg: 'en'. default: browser language. |
 
 ##### Returns
 
@@ -398,7 +400,8 @@ init(
     plan: '<user-plan>',
     last_seen_at: new Date(),
     authenticated: true
-  }
+  },
+  "en"
 );
 ```
 
@@ -473,6 +476,7 @@ Properties of Screeb provider
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `hooks?` | `Hooks` | Hooks to define callback for various event |
+| `language?` | `string` | The language you want to force |
 | `userId?` | `string` | The unique identifier of your user. |
 | `userProperties?` | `PropertyRecord` | The properties of your user. |
 | `websiteId` | `string` | Your website/channel id. |
@@ -513,11 +517,11 @@ ___
 
 ### SurveyStartFunction
 
-Ƭ **SurveyStartFunction**: (`surveyId`: `string`, `allowMultipleResponses`: `boolean`, `hiddenFields`: `PropertyRecord`) => `Promise`<`unknown`\>
+Ƭ **SurveyStartFunction**: (`surveyId`: `string`, `allowMultipleResponses`: `boolean`, `hiddenFields`: `PropertyRecord`, `hooks`: `Hooks`, `language`: `string`) => `Promise`<`unknown`\>
 
 #### Type declaration
 
-▸ (`surveyId`, `allowMultipleResponses`, `hiddenFields`): `Promise`<`unknown`\>
+▸ (`surveyId`, `allowMultipleResponses`, `hiddenFields`, `hooks`, `language`): `Promise`<`unknown`\>
 
 Starts a survey by its ID.
 
@@ -528,6 +532,8 @@ Starts a survey by its ID.
 | `surveyId` | `string` |
 | `allowMultipleResponses` | `boolean` |
 | `hiddenFields` | `PropertyRecord` |
+| `hooks` | `Hooks` |
+| `language` | `string` |
 
 ##### Returns
 

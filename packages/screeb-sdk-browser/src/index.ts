@@ -26,7 +26,7 @@ const callScreebCommand: ScreebFunction = (...args) => {
   }
 
   return Promise.reject(
-    "[Screeb] Screeb.load() must be called before any other function.",
+    "[Screeb] Screeb.load() must be called before any other function."
   );
 };
 
@@ -100,6 +100,8 @@ export const load = (options: ScreebOptions = {}) =>
  * @param hooks Hooks to be called when SDK is ready or a survey is showed, started, completed, hidden
  * or when a question is replied.
  *
+ * @param language Force a specific language for the tag. eg: 'en'. default: browser language.
+ *
  * @example
  * ```ts
  * import * as Screeb from "@screeb/sdk-browser";
@@ -118,6 +120,7 @@ export const load = (options: ScreebOptions = {}) =>
  *     version: "1.0.0",
  *     onReady: (payload) =>  console.log("Screeb SDK is ready!", payload),
  *   },
+ *   "en"
  * );
  * ```
  */
@@ -126,8 +129,15 @@ export const init = (
   userId?: string,
   userProperties?: PropertyRecord,
   hooks?: Hooks,
+  language?: string
 ) => {
-  let identityObject;
+  let identityObject:
+    | {
+        hooks?: Hooks;
+        identity?: { id?: string; properties?: PropertyRecord };
+        language?: string;
+      }
+    | undefined;
 
   if (userId || userProperties) {
     identityObject = {
@@ -137,6 +147,10 @@ export const init = (
         properties: userProperties,
       },
     };
+  }
+
+  if (language) {
+    identityObject = { ...identityObject, language };
   }
 
   return callScreebCommand("init", websiteId, identityObject);
@@ -231,7 +245,7 @@ export const debug = () => callScreebCommand("debug");
  */
 export const eventTrack = (
   eventName: string,
-  eventProperties?: PropertyRecord,
+  eventProperties?: PropertyRecord
 ) => callScreebCommand("event.track", eventName, eventProperties);
 
 /**
@@ -320,13 +334,13 @@ export const identityGet = (): Promise<ScreebIdentityGetReturn> =>
 export const identityGroupAssign = (
   groupName: string,
   groupType?: string,
-  groupProperties?: PropertyRecord,
+  groupProperties?: PropertyRecord
 ) =>
   callScreebCommand(
     "identity.group.assign",
     groupType,
     groupName,
-    groupProperties,
+    groupProperties
   );
 
 /**
@@ -426,6 +440,7 @@ export const surveyClose = () => callScreebCommand("survey.close");
  *     version: "1.0.0",
  *     onSurveyShowed: (payload) => console.log("Survey showed", payload),
  *   },
+ *   "en"
  * );
  * ```
  */
@@ -434,9 +449,11 @@ export const surveyStart = (
   allowMultipleResponses = true,
   hiddenFields: PropertyRecord = {},
   hooks?: Hooks,
+  language?: string
 ) =>
   callScreebCommand("survey.start", surveyId, {
     allow_multiple_responses: allowMultipleResponses,
+    language: language,
     hidden_fields: hiddenFields,
     hooks: hooks,
   });

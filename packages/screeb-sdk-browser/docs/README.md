@@ -702,7 +702,7 @@ ___
 
 ### init
 
-▸ **init**(`websiteId`, `userId?`, `userProperties?`, `hooks?`): `void` \| `Promise`<`unknown`\>
+▸ **init**(`websiteId`, `userId?`, `userProperties?`, `hooks?`, `language?`): `void` \| `Promise`<`unknown`\>
 
 Initializes Screeb tag.
 
@@ -714,6 +714,7 @@ Initializes Screeb tag.
 | `userId?` | `string` | The unique identifier of your user. |
 | `userProperties?` | [`PropertyRecord`](README.md#propertyrecord) | The properties of your user. ```text Requirements: - Property names must be limited to 128 characters - No more than 1000 attributes - Supported types for values: string, number, boolean and Date ``` |
 | `hooks?` | [`Hooks`](README.md#hooks) | Hooks to be called when SDK is ready or a survey is showed, started, completed, hidden or when a question is replied. |
+| `language?` | `string` | Force a specific language for the tag. eg: 'en'. default: browser language. |
 
 #### Returns
 
@@ -738,6 +739,7 @@ Screeb.init(
     version: "1.0.0",
     onReady: (payload) =>  console.log("Screeb SDK is ready!", payload),
   },
+  "en"
 );
 ```
 
@@ -813,7 +815,7 @@ ___
 
 ### surveyStart
 
-▸ **surveyStart**(`surveyId`, `allowMultipleResponses?`, `hiddenFields?`, `hooks?`): `void` \| `Promise`<`unknown`\>
+▸ **surveyStart**(`surveyId`, `allowMultipleResponses?`, `hiddenFields?`, `hooks?`, `language?`): `void` \| `Promise`<`unknown`\>
 
 Starts a survey by its ID.
 
@@ -825,6 +827,7 @@ Starts a survey by its ID.
 | `allowMultipleResponses` | `boolean` | `true` |
 | `hiddenFields` | [`PropertyRecord`](README.md#propertyrecord) | `{}` |
 | `hooks?` | [`Hooks`](README.md#hooks) | `undefined` |
+| `language?` | `string` | `undefined` |
 
 #### Returns
 
@@ -846,6 +849,7 @@ Screeb.surveyStart(
     version: "1.0.0",
     onSurveyShowed: (payload) => console.log("Survey showed", payload),
   },
+  "en"
 );
 ```
 
