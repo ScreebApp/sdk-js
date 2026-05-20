@@ -1,3 +1,7 @@
+> ⚠️ **This repository has been archived.** Development has moved to [ScreebApp/sdk](https://github.com/ScreebApp/sdk).
+
+---
+
 # sdk-js
 
 This is a lerna-powered mono-repository for Screeb javascript SDKs.
